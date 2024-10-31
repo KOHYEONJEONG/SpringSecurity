@@ -1,4 +1,4 @@
-package org.example.springsecurity;
+package org.example.springsecurity.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.springsecurity.service.SecurityService;
