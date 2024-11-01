@@ -19,7 +19,7 @@ import java.util.Date;
 public class SecurityServiceImpl implements SecurityService {
 
     //서버는 secretKey를 가지고 있다, 암호화 key
-    static final String secretKey = "4C8kum4LxyKWYLM78sKdXrzbBjDCFyfX";
+    public static final String secretKey = "4C8kum4LxyKWYLM78sKdXrzbBjDCFyfX";
 
     //@Override
     public String createToken(String subject, long ttlMillis) {
