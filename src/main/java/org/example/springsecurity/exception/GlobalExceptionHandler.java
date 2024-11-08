@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-@ControllerAdvice //컨트롤러처럼 동작하며, 모든예를 처리할 수 있는 컨트롤러이다.
+@ControllerAdvice //컨트롤러처럼 동작하며, 모든 예외를 처리할 수 있는 컨트롤러이다.
 @RestController
 public class GlobalExceptionHandler { //클라이언트에 가기전에 잡아줌.
 

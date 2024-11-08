@@ -53,7 +53,9 @@ public class AspectConfig {
             throw new IllegalArgumentException("Empty token");
             //GlobalExceptionHandler.class 에서 예외처리 해줌
         }
+
         byte[] apiKeySecreteByTes = SecurityServiceImpl.secretKey.getBytes();
+
         Claims claims = Jwts.parser()
                 .setSigningKey(apiKeySecreteByTes)  //시크릿 키를 가지고 역으로 파싱하기
                 .parseClaimsJws(tokenInHeader)
