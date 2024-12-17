@@ -1,9 +1,9 @@
-package org.example.springsecurity.exam;
+package org.example.springsecurity.exam1;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.springsecurity.exam.aop.RetryAspect;
-import org.example.springsecurity.exam.aop.TraceAspect;
-import org.example.springsecurity.exam.service.ExamService;
+import org.example.springsecurity.exam1.aop.RetryAspect;
+import org.example.springsecurity.exam1.aop.TraceAspect;
+import org.example.springsecurity.exam1.service.ExamService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

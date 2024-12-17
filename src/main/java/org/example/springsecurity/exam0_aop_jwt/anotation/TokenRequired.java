@@ -1,4 +1,4 @@
-package org.example.springsecurity.anotation;
+package org.example.springsecurity.exam0_aop_jwt.anotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

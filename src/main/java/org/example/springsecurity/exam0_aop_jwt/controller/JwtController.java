@@ -1,7 +1,7 @@
-package org.example.springsecurity.controller;
+package org.example.springsecurity.exam0_aop_jwt.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.springsecurity.service.SecurityService;
+import org.example.springsecurity.exam0_aop_jwt.service.SecurityService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,7 +12,7 @@ import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
-public class HomeController {
+public class JwtController {
 
     private final SecurityService securityService;
 

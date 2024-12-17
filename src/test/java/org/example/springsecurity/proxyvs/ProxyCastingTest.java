@@ -3,14 +3,12 @@ package org.example.springsecurity.proxyvs;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.springsecurity.exam2.aop.CallLogAspect;
-import org.example.springsecurity.service.MemberService;
-import org.example.springsecurity.service.impl.MemberServiceImpl;
+import org.example.springsecurity.exam0_aop_jwt.service.MemberService;
+import org.example.springsecurity.exam0_aop_jwt.service.impl.MemberServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
-
-import static org.assertj.core.api.Assertions.*;
 
 @Slf4j
 @SpringBootTest

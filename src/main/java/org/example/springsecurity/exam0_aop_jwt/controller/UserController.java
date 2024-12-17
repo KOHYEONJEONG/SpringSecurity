@@ -1,9 +1,9 @@
-package org.example.springsecurity.controller;
+package org.example.springsecurity.exam0_aop_jwt.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
-import org.example.springsecurity.anotation.TokenRequired;
+import org.example.springsecurity.exam0_aop_jwt.anotation.TokenRequired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

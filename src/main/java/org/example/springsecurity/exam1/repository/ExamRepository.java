@@ -1,7 +1,7 @@
-package org.example.springsecurity.exam.repository;
+package org.example.springsecurity.exam1.repository;
 
-import org.example.springsecurity.exam.annotation.Retry;
-import org.example.springsecurity.exam.annotation.Trace;
+import org.example.springsecurity.exam1.annotation.Retry;
+import org.example.springsecurity.exam1.annotation.Trace;
 import org.springframework.stereotype.Repository;
 
 @Repository

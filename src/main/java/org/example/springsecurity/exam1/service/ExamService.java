@@ -1,9 +1,8 @@
-package org.example.springsecurity.exam.service;
+package org.example.springsecurity.exam1.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.springsecurity.exam.annotation.Retry;
-import org.example.springsecurity.exam.annotation.Trace;
-import org.example.springsecurity.exam.repository.ExamRepository;
+import org.example.springsecurity.exam1.annotation.Trace;
+import org.example.springsecurity.exam1.repository.ExamRepository;
 import org.springframework.stereotype.Service;
 
 @Service

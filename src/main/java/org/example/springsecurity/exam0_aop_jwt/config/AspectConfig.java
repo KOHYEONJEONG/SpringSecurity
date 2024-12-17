@@ -1,4 +1,4 @@
-package org.example.springsecurity.config;
+package org.example.springsecurity.exam0_aop_jwt.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -7,14 +7,13 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.example.springsecurity.anotation.TokenRequired;
-import org.example.springsecurity.service.impl.SecurityServiceImpl;
+import org.example.springsecurity.exam0_aop_jwt.anotation.TokenRequired;
+import org.example.springsecurity.exam0_aop_jwt.service.impl.SecurityServiceImpl;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.xml.bind.DatatypeConverter;
 import java.util.concurrent.TimeUnit;
 
 @Aspect
@@ -22,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 public class AspectConfig {
 
     //befor-after 적용
-    @Around("execution(* org.example.springsecurity.controller.HomeController.*(..))")
+    @Around("execution(* org.example.springsecurity.exam0_aop_jwt.controller.JwtController.*(..))")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         System.out.println("실행 시작: "
         + joinPoint.getSignature().getDeclaringTypeName()+"."+joinPoint.getSignature().getName());

@@ -1,4 +1,4 @@
-package org.example.springsecurity.service;
+package org.example.springsecurity.exam0_aop_jwt.service;
 
 public interface MemberService {
 

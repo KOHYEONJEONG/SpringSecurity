@@ -1,8 +1,8 @@
-package org.example.springsecurity.service.impl;
+package org.example.springsecurity.exam0_aop_jwt.service.impl;
 
-import org.example.springsecurity.anotation.ClassAop;
-import org.example.springsecurity.anotation.MethodAop;
-import org.example.springsecurity.service.MemberService;
+import org.example.springsecurity.exam0_aop_jwt.anotation.ClassAop;
+import org.example.springsecurity.exam0_aop_jwt.anotation.MethodAop;
+import org.example.springsecurity.exam0_aop_jwt.service.MemberService;
 import org.springframework.stereotype.Component;
 
 @ClassAop

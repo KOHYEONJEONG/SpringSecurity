@@ -1,4 +1,4 @@
-package org.example.springsecurity.exam.annotation;
+package org.example.springsecurity.exam1.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

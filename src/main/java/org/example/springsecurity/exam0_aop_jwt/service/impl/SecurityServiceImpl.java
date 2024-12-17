@@ -1,14 +1,13 @@
-package org.example.springsecurity.service.impl;
+package org.example.springsecurity.exam0_aop_jwt.service.impl;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.example.springsecurity.service.SecurityService;
+import org.example.springsecurity.exam0_aop_jwt.service.SecurityService;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.spec.SecretKeySpec;
-import javax.xml.bind.DatatypeConverter;
 import java.security.Key;
 import java.util.Date;
 
