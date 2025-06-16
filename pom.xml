@@ -46,12 +46,13 @@
             <scope>test</scope>
         </dependency>
 
+<!--     20250616)   jaxb :  xml 바인딩 시 필요함-->
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
             <version>2.3.1</version>
         </dependency>
-
+<!--     20250616)   JWT :  JWT 라이브러리-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
