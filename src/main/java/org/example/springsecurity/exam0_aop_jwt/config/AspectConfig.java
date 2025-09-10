@@ -42,7 +42,7 @@ public class AspectConfig {
     // @TokenRequired 가 붙은 메서드에서만 실행되는 AOP
     //실행 전에 토큰이 필요한 메서드에 붙여서 관리
     @Before("@annotation(tokenRequired)")
-    public void tokenRequiredWithAnnotation(TokenRequired tokenRequired) throws Throwable {
+    public void tokenRequiredWithAnnotation(TokenRequired tokenRequired) {
         ServletRequestAttributes reqAttributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
 
         HttpServletRequest request = reqAttributes.getRequest();

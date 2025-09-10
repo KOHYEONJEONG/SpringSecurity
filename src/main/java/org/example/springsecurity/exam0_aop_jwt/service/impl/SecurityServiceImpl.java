@@ -92,15 +92,16 @@ public class SecurityServiceImpl implements SecurityService {
         JwtBuilder builder =
                 Jwts.builder()
                 .setSubject(subject)                     // 식별자 설정(( 등록된 클레임 중 하나)sub 클레임을 설정)
-                .claim("userName", "hyeonjeong")   // ✅ 커스텀 클레임 추가(Private Claim (비공개 클레임))
+                .claim("role", "admin")   // ✅ 커스텀 클레임 추가(Private Claim (비공개 클레임))
                 .setIssuedAt(now)           // 발행 시간 설정
-                .setExpiration(new Date(nowMillis + ttlMillis))  // 만료 시간 설정
+                .setExpiration(new Date(nowMillis + ttlMillis))  // 만료 시간 설정('세션타임아웃'이랑 비슷하지만 느낌은 다르다)
+                                                                        // 서버가 알아서 로그인을 해제한다면 jwt는 자기가 티켓을 들고 다니면서 일정시간이 지나면 무효
                 .signWith(signatureAlgorithm, siginigKey);      // 서명 키 설정(siginigKey 만들어둔 걸로 서명 부분 만듬)
 
 //      [Decoded Payload]
 //        {
 //            "sub": "ko",
-//            "userName": "hyeonjeong",
+//            "role": "admin",
 //            "iat": 1750063193,
 //            "exp": 1750066793
 //        }
@@ -122,8 +123,9 @@ public class SecurityServiceImpl implements SecurityService {
                 .getBody();
 
         //커스텀 크레임=비공개 클레임 꺼내기
-        String name = claims.get("userName", String.class);
-        System.out.println("username : "+ name);
+        String role = claims.get("role", String.class);
+        String exp = String.valueOf(claims.getExpiration());
+        System.out.println("role : "+ role+", exp : "+exp);
 
         //등록된 클래임 꺼내기
         return claims.getSubject();//정상적인 token이라면(= 위변조가 되지 않은 토큰이라면) subject 가져올 수 있다.

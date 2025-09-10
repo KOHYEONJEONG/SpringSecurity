@@ -90,7 +90,7 @@ public class JwtController {
     @ResponseBody
     public Map<String, Object> generateToken(@RequestParam(value="subject") String subject) {
         //subject : 식별자(주로 userId)
-        String token = securityService.createToken(subject, 1000* 60*60);// 인자 : 사용자정보 , 토큰 만료 시간
+        String token = securityService.createToken(subject, 1000* 60*60);// 인자 : 사용자정보 , 토큰 만료 시간 ( 1000 : 1초 , 1000 * 60 : 1분)
         //token은 요청받을 때마다 다르게 생성해서 보냄.
 
         Map<String, Object> map = new HashMap<>();
