@@ -1,5 +1,7 @@
 package org.example.springsecurity.exam0_aop_jwt.controller;
 
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.example.springsecurity.exam0_aop_jwt.service.SecurityService;
 import org.springframework.stereotype.Controller;
@@ -88,14 +90,23 @@ public class JwtController {
      */
     @GetMapping("security/generate/token")
     @ResponseBody
-    public Map<String, Object> generateToken(@RequestParam(value="subject") String subject) {
+    public Map<String, Object> generateToken(@RequestParam(value="userId") String userId, HttpServletResponse response) {
         //subject : 식별자(주로 userId)
-        String token = securityService.createToken(subject, 1000* 60*60);// 인자 : 사용자정보 , 토큰 만료 시간 ( 1000 : 1초 , 1000 * 60 : 1분)
+        String token = securityService.createToken(userId, 1000* 60*60);// 인자 : 사용자정보 , 토큰 만료 시간 ( 1000 : 1초 , 1000 * 60 : 1분)
         //token은 요청받을 때마다 다르게 생성해서 보냄.
 
         Map<String, Object> map = new HashMap<>();
-        map.put("userid", subject);
+        map.put("userid", userId);
         map.put("token", token);
+
+        //브라우저 > Application > Cookies > ACCESS_TOKEN
+        Cookie accessCookie = new Cookie("ACCESS_TOKEN", token);
+        accessCookie.setHttpOnly(true);
+//        accessCookie.setSecure(true);                  // HTTPS 권장
+        accessCookie.setPath("/");
+        accessCookie.setMaxAge(1 * 60);               // 15분
+        accessCookie.setAttribute("SameSite", "Lax");  // 톰캣9+ 또는 서블릿 6 미만이면 setHeader로 수동
+        response.addCookie(accessCookie); //쿠키 생성
 
         return map;
     }
@@ -107,7 +118,7 @@ public class JwtController {
      * http://localhost:8070/security/get/subject?token=발행된 토큰
      *
      * 추가로
-     * https://jst.io에서 발급받은 토큰을 'ENCODED VALUE'에 입력하면
+     * https://www.jwt.io/에서 발급받은 토큰을 'ENCODED VALUE'에 입력하면
      * HEDAER와 PAYLOAD가 보여진다.
      * */
     @GetMapping("security/get/subject")
